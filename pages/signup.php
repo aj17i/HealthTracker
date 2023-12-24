@@ -18,23 +18,23 @@
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">First Name</span>
-                        <input type="text" placeholder="Enter your first name" required>
+                        <input type="text" placeholder="Enter your first name" required id="fname">
                     </div>
                     <div class="input-box">
                         <span class="details">Last Name</span>
-                        <input type="text" placeholder="Enter your last name" required>
+                        <input type="text" placeholder="Enter your last name" required id="lname">
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Enter your email" required id="email">
                     </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
-                        <input type="text" placeholder="Enter your number" required>
+                        <input type="text" placeholder="Enter your number" required id="number">
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="text" placeholder="Enter your password" required>
+                        <input type="text" placeholder="Enter your password" required id="password">
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
@@ -42,15 +42,15 @@
                     </div>
                 </div>
                 <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="male">
+                    <input type="radio" name="gender" id="female">
                     <span class="gender-title">Gender</span>
                     <div class="category">
-                        <label for="dot-1">
+                        <label for="male">
                             <span class="dot one"></span>
                             <span class="gender">Male</span>
                         </label>
-                        <label for="dot-2">
+                        <label for="female">
                             <span class="dot two"></span>
                             <span class="gender">Female</span>
                         </label>       

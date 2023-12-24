@@ -15,7 +15,7 @@
         <a href="patientLogin.php" class="button"><img src="./css/images/icons8-patient-100.png" alt="" class="icon1">
             Patient</a>
 
-        <a href="doctorLogin.php" class="button"><img src="./css/images/icons8-doctor-80.png" alt=""
+        <a href="doctorLogin.html" class="button"><img src="./css/images/icons8-doctor-80.png" alt=""
                 class="icon">Doctor</a>
 
         <div class="login-message">
