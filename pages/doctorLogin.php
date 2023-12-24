@@ -20,8 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($nbrows == 1) {
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $user;
-        header("Location: doctor.php"); // Redirect to the doctor.php page on success
-        exit();
+        header("Location: doctor.php");
+        exit(); // Redirect to the doctor.php page on success
+        
     } else {
         header("Location: doctorLogin.html"); // Redirect to the login page on failure
         exit();
