@@ -53,6 +53,10 @@ if (!$result) {
         echo "</div>";
     }
     ?>
+    <form action="logout.php">
+    <button> Logout</button>
+    </form>
+    
 
 </body>
 
