@@ -4,11 +4,11 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve values from the form
-    $Pid = mysqli_real_escape_string($con, $_POST['Pid']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
     $pass = mysqli_real_escape_string($con, $_POST['password']);
 
     // Query to check if the user exists
-    $query = "SELECT * FROM patient WHERE Pid='$Pid' AND password='$pass'";
+    $query = "SELECT * FROM patient WHERE email='$email' AND password='$pass'";
     $result = mysqli_query($con, $query);
 
     if (!$result) {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($nbrows == 1) {
         $_SESSION['logged'] = true;
-        $_SESSION['Pid'] = $Pid;
+        $_SESSION['email'] = $email;
         header("Location: patient.php");
         exit(); 
         

@@ -1,68 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'Login.php';
+if (
+    isset($_POST['fname']) && $_POST['fname'] != ""
+    && isset($_POST['lname']) && $_POST['lname'] != ""
+    && isset($_POST['email']) && $_POST['email'] != ""
+) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $pass = $_POST['password'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $gender = $_POST['gender'];
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/signup.css">
-    <title>Document</title>
-</head>
 
-<body>
+    $query = "Select * From patient where email ='$email' and password='$pass'";
 
+    $res = mysqli_query($con, $query);
 
-    <div class="container">
-        <div class="title">Registration</div>
-        <div class="content">
-            <form action="#">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">First Name</span>
-                        <input type="text" placeholder="Enter your first name" required id="fname">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Last Name</span>
-                        <input type="text" placeholder="Enter your last name" required id="lname">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email" required id="email">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input type="text" placeholder="Enter your number" required id="number">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Password</span>
-                        <input type="text" placeholder="Enter your password" required id="password">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Confirm Password</span>
-                        <input type="text" placeholder="Confirm your password" required>
-                    </div>
-                </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="male">
-                    <input type="radio" name="gender" id="female">
-                    <span class="gender-title">Gender</span>
-                    <div class="category">
-                        <label for="male">
-                            <span class="dot one"></span>
-                            <span class="gender">Male</span>
-                        </label>
-                        <label for="female">
-                            <span class="dot two"></span>
-                            <span class="gender">Female</span>
-                        </label>       
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Register">
-                </div>
-            </form>
-        </div>
-    </div>
+    $nbrows = mysqli_num_rows($res);
+    if ($nbrows == 1) {
+        echo "error : user already exists, try another email, or try logging in";
+        header("refresh:5;url=register.php");
+    } else {
+        $query2 = "INSERT INTO `patient` (`fname`,`lname`,`password`,`email`,`phone`,`gender`) VALUES ('$fname','$lname','$pass','$email','$phone','$gender')";
+        $result2 = mysqli_query($con, $query2);
+        if (!$result2) {
+            echo "error registration";
+            header("refresh:5;url=signup.html");
+        } else {
+            header("location:patientLogin.html");
+        }
 
-</body>
-
-</html>
+    }
+}
+?>

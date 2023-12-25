@@ -21,7 +21,7 @@
         <div class="login-message">
 
             <span>If you don't have an account, </span>
-            <a href="signup.php" class="signup-link">Sign up</a>
+            <a href="signup.html" class="signup-link">Sign up</a>
             <span> (Only for patients!)</span>
 
         </div>

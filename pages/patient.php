@@ -15,13 +15,13 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 }
 
 
-$Pid = $_SESSION['Pid'];
+$email = $_SESSION['email'];
 
 
 
 
 // Fetch all doctors' information
-$query = "SELECT * FROM patient WHERE Pid='$Pid'";
+$query = "SELECT * FROM patient WHERE email='$email'";
 $result = mysqli_query($con, $query);
 
 
