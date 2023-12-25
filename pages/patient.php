@@ -9,19 +9,19 @@ mysqli_select_db($con, $dbname)
     or die('DB selection problem');
 error_reporting(E_ALL);
 session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: doctorLogin.html");
+if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
+    header("Location: patientLogin.html");
     exit();
 }
 
 
-$user = $_SESSION['email'];
+$Pid = $_SESSION['Pid'];
 
 
 
 
 // Fetch all doctors' information
-$query = "SELECT * FROM doctor WHERE email='$user'";
+$query = "SELECT * FROM patient WHERE Pid='$Pid'";
 $result = mysqli_query($con, $query);
 
 
@@ -41,14 +41,15 @@ if (!$result) {
 </head>
 
 <body>
-    <h1>Hello world</h1>
+    <h1>Hello patient</h1>
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div>";
         echo "<h2>" . $row['fname'] . " " . $row['lname'] . "</h2>";
         echo "<p>Email: " . $row['email'] . "</p>";
-        echo "<p>Occupation: " . $row['occupation'] . "</p>";
-        echo "<p>Hospital: " . $row['hospital'] . "</p>";
+        echo "<p>History: " . $row['history'] . "</p>";
+        echo "<p>Pid: " . $row['Pid'] . "</p>";
+        echo "<p>Age: " . $row['age'] . "</p>";
         echo "</div>";
     }
     ?>

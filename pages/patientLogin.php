@@ -1,48 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'Login.php';
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/doctor.css">
-    
-</head>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve values from the form
+    $Pid = mysqli_real_escape_string($con, $_POST['Pid']);
+    $pass = mysqli_real_escape_string($con, $_POST['password']);
 
-<body>
-    
-    <div class="page">
-        <div class="container">
-            <div class="left">
-                <div class="login">Hello!</div>
-                <div class="eula">Hope you are doing well!.
-                </div>
-            </div>
-            <div class="right">
-                <svg viewBox="0 0 320 300">
-                    <defs>
-                        <linearGradient inkscape:collect="always" id="linearGradient" x1="13" y1="193.49992" x2="307"
-                            y2="193.49992" gradientUnits="userSpaceOnUse">
-                            <stop style="stop-color:#ff00ff;" offset="0" id="stop876" />
-                            <stop style="stop-color:#0044ff;" offset="1" id="stop878" />
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
-                </svg>
-                <div class="form">
-                    <label for="email">Patient ID</label>
-                    <input type="text" id="PId">
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
-                    <button type="submit" class="button">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    // Query to check if the user exists
+    $query = "SELECT * FROM patient WHERE Pid='$Pid' AND password='$pass'";
+    $result = mysqli_query($con, $query);
 
-</body>
+    if (!$result) {
+        die('Error in the query: ' . mysqli_error($con));
+    }
 
+    $nbrows = mysqli_num_rows($result);
 
-</html>
+    if ($nbrows == 1) {
+        $_SESSION['logged'] = true;
+        $_SESSION['Pid'] = $Pid;
+        header("Location: patient.php");
+        exit(); 
+        
+    } else {
+        header("Location: patientLogin.html");
+        exit();
+    }
+}
+
+// Close the database connection
+mysqli_close($con);
+?>

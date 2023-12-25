@@ -12,7 +12,7 @@
     <div>
         <h1 class="header">Hello to AJ's Health tracker</h1>
 
-        <a href="patientLogin.php" class="button"><img src="./css/images/icons8-patient-100.png" alt="" class="icon1">
+        <a href="patientLogin.html" class="button"><img src="./css/images/icons8-patient-100.png" alt="" class="icon1">
             Patient</a>
 
         <a href="doctorLogin.html" class="button"><img src="./css/images/icons8-doctor-80.png" alt=""
