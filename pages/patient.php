@@ -54,9 +54,7 @@ if (!$result) {
     }
     ?>
     <form action="logout.php">
-    <button> Logout</button>
+        <button> Logout</button>
     </form>
-    
-
 </body>
 </html>
