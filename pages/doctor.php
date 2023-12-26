@@ -60,6 +60,7 @@ if (!$result) {
             <form action="logout.php">
                 <button> Logout</button>
             </form>
+            <a href="editdoctor.php">edit profile</a>
         </div>
         <img class="circle-image" src="./css/images/doctor1.webp" alt="Circular Image" />
         <div class="text">
