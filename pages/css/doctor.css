@@ -130,7 +130,7 @@ input::-moz-focus-inner {
 #submit:active {
   color: #d0d0d2;
 }
-.button{
+.buttonz{
   cursor: pointer; 
   border: 1px solid #3498db; 
   background-color: transparent; 
@@ -139,4 +139,10 @@ input::-moz-focus-inner {
   color: #3498db; 
   font-size: 1em; 
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); 
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 20px;
+}
+.buttonz:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
