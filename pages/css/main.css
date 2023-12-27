@@ -1,8 +1,6 @@
 body {
   background-image: url('./images/4.webp');
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: inline;
   align-items: center;
   height: 100vh;
   margin: 0;
