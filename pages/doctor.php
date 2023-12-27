@@ -62,7 +62,13 @@ if (!$result) {
             </form>
             <a href="editdoctor.php">edit profile</a>
         </div>
+
+
+
         <img class="circle-image" src="./css/images/doctor1.webp" alt="Circular Image" />
+
+    
+
         <div class="text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis ipsam laborum maxime
             similique fugiat minima soluta mollitia expedita iure, neque officiis nihil hic placeat non! Ullam
