@@ -1,12 +1,11 @@
 <?php
 require_once 'Login.php';
 if (
-    isset($_POST['fname']) && $_POST['fname'] != ""
-    && isset($_POST['lname']) && $_POST['lname'] != ""
+    isset($_POST['fullname']) && $_POST['fullname'] != ""
     && isset($_POST['email']) && $_POST['email'] != ""
 ) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    $fullname = $_POST['fullname'];
+   
     $pass = $_POST['password'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -22,7 +21,7 @@ if (
         echo "error : user already exists, try another email, or try logging in";
         header("refresh:5;url=register.php");
     } else {
-        $query2 = "INSERT INTO `patient` (`fname`,`lname`,`password`,`email`,`phone`,`gender`) VALUES ('$fname','$lname','$pass','$email','$phone','$gender')";
+        $query2 = "INSERT INTO `patient` (`fullname`,`password`,`email`,`phone`,`gender`) VALUES ('$fullname','$pass','$email','$phone','$gender')";
         $result2 = mysqli_query($con, $query2);
         if (!$result2) {
             echo "error registration";

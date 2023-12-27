@@ -5,10 +5,14 @@ $dbpass = "";
 $dbname = "healthtracker";
 $con = mysqli_connect($dbhost, $dbuser, $dbpass)
     or die('Cannot connect to the server');
+
 mysqli_select_db($con, $dbname)
     or die('DB selection problem');
+
 error_reporting(E_ALL);
+
 session_start();
+
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: doctorLogin.html");
     exit();
@@ -50,7 +54,7 @@ if (!$result) {
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<div>";
-                echo "<h2>" . $row['fname'] . " " . $row['lname'] . "</h2>";
+                echo "<h2>" . $row['fullname'] . "</h2>";
                 echo "<p>Email: " . $row['email'] . "</p>";
                 echo "<p>Occupation: " . $row['occupation'] . "</p>";
                 echo "<p>Hospital: " . $row['hospital'] . "</p>";
@@ -60,14 +64,14 @@ if (!$result) {
             <form action="logout.php">
                 <button> Logout</button>
             </form>
-            <a href="editdoctor.php">edit profile</a>
+            <a href="editdoctor.html">edit profile</a>
         </div>
 
 
 
         <img class="circle-image" src="./css/images/doctor1.webp" alt="Circular Image" />
 
-    
+
 
         <div class="text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis ipsam laborum maxime

@@ -45,7 +45,7 @@ if (!$result) {
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div>";
-        echo "<h2>" . $row['fname'] . " " . $row['lname'] . "</h2>";
+        echo "<h2>" . $row['fullname'] .  "</h2>";
         echo "<p>Email: " . $row['email'] . "</p>";
         echo "<p>History: " . $row['history'] . "</p>";
         echo "<p>Pid: " . $row['Pid'] . "</p>";
