@@ -94,6 +94,8 @@ if (!$result2) {
             while ($row2 = mysqli_fetch_assoc($result2)) {
                 echo "<div>";
                 echo "<p>" . "Patient: " . $row2['Fullname'] . " ID: " . $row2['Pid'] . "</p>";
+                echo "<a class = 'link' href='viewpatient.php?Pid=" . $row2['Pid'] . "'>View Details</a>";
+                echo "<br> <br>";
                 echo "</div>";
             }
             ?>
@@ -124,7 +126,7 @@ if (!$result2) {
                 <button class="btn"> Logout</button>
             </form>
         </div>
-        
+
     </div>
 
 
