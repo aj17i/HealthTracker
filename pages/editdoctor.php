@@ -83,25 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-
-
-
-
-
-//$fullname = $_POST['fullname'];
-
-
-
-// Fetch all doctors' information
-//$query = "UPDATE doctor set fullname = '$fullname' where email = '$user' ";
-//$result = mysqli_query($con, $query);
-
-
-
-//if (!$result) {
- //   die('Error in the query: ' . mysqli_error($con));
-//}
-
 $nbrows = mysqli_affected_rows($con);
 
 if ($nbrows == 1) {
