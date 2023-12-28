@@ -28,7 +28,15 @@ $user = $_SESSION['email'];
 $query = "SELECT * FROM doctor WHERE email='$user'";
 $result = mysqli_query($con, $query);
 
-$query2 = "SELECT * FROM patient INNER JOIN doctor ON patient.Did = doctor.Did";
+
+$query3 = "SELECT * FROM doctor WHERE email='$user'";
+$result3 = mysqli_query($con, $query);
+
+
+$row = mysqli_fetch_assoc($result3);
+$Did = $row['Did'];
+
+$query2 = "SELECT * FROM patient where Did = $Did";
 $result2 = mysqli_query($con, $query2);
 
 
@@ -53,15 +61,17 @@ if (!$result2) {
 
 <body>
     <div class="container">
-        <img src="./css/images/doctor_back.jpg" alt="Image" />
+        <img src="./css/images/back3.jpg" alt="Image" />
         <div class="text">
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<div>";
                 echo "<h1>" . "Dr. " . $row['fullname'] . "</h1>";
-                echo "<p>Email: " . $row['email'] . "</p>";
-                echo "<p>Occupation: " . $row['occupation'] . "</p>";
-                echo "<p>Hospital: " . $row['hospital'] . "</p>";
+                echo "<div class = 'detailes'><h3 style = 'font-weight = bold;'>Details:</h3>";
+                echo "<p><span class = 'bold'>Email: </span>" . $row['email'] . "</p>";
+                echo "<p><span class = 'bold'>Occupation: </span>" . $row['occupation'] . "</p>";
+                echo "<p><span class = 'bold'>Hospital: </span>" . $row['hospital'] . "</p>";
+                echo "<p><span class = 'bold'>Description: </span>" . $row['description'] . "</p></div>";
                 echo "</div>";
             }
             ?>
@@ -71,53 +81,33 @@ if (!$result2) {
 
         <img class="circle-image" src="./css/images/doctor1.webp" alt="Circular Image" />
 
-
-
-        <div class="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis ipsam laborum maxime
-            similique fugiat minima soluta mollitia expedita iure, neque officiis nihil hic placeat non! Ullam
-            voluptatum ducimus distinctio.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores molestias voluptate dicta cum in ut
-            consequatur esse quam corrupti commodi, ea, sit fugit debitis adipisci. Culpa tempora itaque perspiciatis
-            minima.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sit quam, inventore eos soluta quia ea
-            expedita facere debitis consectetur ab consequuntur quibusdam blanditiis quod suscipit eligendi delectus
-            voluptate incidunt?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus architecto incidunt ut, minus optio
-            eveniet non tenetur nulla atque error animi alias odio temporibus vitae, tempora fugiat, in provident
-            voluptate.
+        <div class = "text">
+            <h2>Patients</h2>
         </div>
 
-        <div class="text">
-            <h2 style="">Patients: </h2>
-            <?php
-            while ($row2 = mysqli_fetch_assoc($result2)) {
-                echo "<div>";
-                echo "<p>" . "Patient: " . $row2['Fullname'] . " ID: " . $row2['Pid'] . "</p>";
-                echo "<a class = 'link' href='viewpatient.php?Pid=" . $row2['Pid'] . "'>View Details</a>";
-                echo "<br> <br>";
-                echo "</div>";
-            }
-            ?>
-        </div>
+        <?php
+        echo "<div class='card-container'>";
 
+        while ($row2 = mysqli_fetch_assoc($result2)) {
+            echo " <div class='card'>";
+            echo "<div class='card-inner'>";
+            echo "<div class='card-front'>";
+            echo " <img src='./css/images/icons8-patient-100.png' alt=''>";
+            echo "<h3>ID: " . $row2['Pid'] . "</h3>";
+            echo " </div>";
+            echo "   <div class='card-back'>";
+            echo "<img src='./css/images/icons8-patient-100.png' alt=''>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<a class='link' href='viewpatient.php?Pid=" . $row2['Pid'] . "'>View Details</a>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
 
-
-        <div class="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis ipsam laborum maxime
-            similique fugiat minima soluta mollitia expedita iure, neque officiis nihil hic placeat non! Ullam
-            voluptatum ducimus distinctio.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores molestias voluptate dicta cum in ut
-            consequatur esse quam corrupti commodi, ea, sit fugit debitis adipisci. Culpa tempora itaque perspiciatis
-            minima.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sit quam, inventore eos soluta quia ea
-            expedita facere debitis consectetur ab consequuntur quibusdam blanditiis quod suscipit eligendi delectus
-            voluptate incidunt?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus architecto incidunt ut, minus optio
-            eveniet non tenetur nulla atque error animi alias odio temporibus vitae, tempora fugiat, in provident
-            voluptate.
-        </div>
-
+        echo "</div>";
+        ?>
 
         <div class="text">
             <a href="editdoctor.html" class="link">edit profile</a>

@@ -1,14 +1,11 @@
-
-
 .container {
     background-color: rgb(224, 229, 232);
-    display: flex;
     border-radius: 30px;
     margin-top: 20px;
     width: 1200px;
     margin-bottom: 20px;
     margin-left: 70px;
-    display:block;
+    display: block;
 }
 
 .container img {
@@ -22,6 +19,42 @@
     margin-top: -20px;
     text-align: center;
     padding: 20px;
+    font-size: 20px;
+}
+.container .text .bold{
+    font-style: italic;
+    font-weight: bolder;
+}
+.container .text .detailes{
+    background-image: url('./images/4.webp');
+    box-shadow: 10px 7px 10px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 800px;
+    margin-left: 170px;
+    color: rgb(224, 229, 232);
+    padding: 20px;
+}
+
+.container .text h1 {
+    font-size: 40px;
+    font-style: italic;
+    box-shadow: 10px 7px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 500px;
+    margin-left: 330px;
+}
+
+.container .text h2 {
+    font-style: italic;
+    box-shadow: 10px 7px 10px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 500px;
+    margin-left: 330px;
+    margin-top: 30px;
+}
+
+.container .text h3 {
+    font-style: italic;
 }
 
 .container .circle-image {
@@ -32,7 +65,7 @@
     border-radius: 50%;
     object-fit: cover;
     margin-left: 40px;
-    margin-top: -330px;
+    margin-top: -500px;
     margin-right: 50px;
     box-shadow: 10px 7px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid navy;
@@ -46,6 +79,7 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .container .link:hover {
@@ -53,7 +87,7 @@
     color: white;
 }
 
-.container .btn{
+.container .btn {
     background-color: white;
     color: #180f50;
     padding: 8px 20px;
@@ -63,6 +97,8 @@
     cursor: pointer;
     width: 120px;
     border: none;
+    font-size: 20px;
+    font-family: 'Noto Serif', serif;
 }
 
 .container .btn:hover {
@@ -70,3 +106,193 @@
     color: white;
 }
 
+
+
+
+
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+   margin-left: 50px;
+}
+
+.card {
+    position: relative;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
+    border-radius: 20px;
+    border: 5px solid #e6e6e6;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); /* Adjusted box shadow */
+    transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow; /* Added box-shadow transition */
+}
+
+.card:hover {
+    transform: translate3d(0px, 0px, -150px);
+    box-shadow: 0 50px 80px -20px rgba(32, 195, 187, 0.5); /* Increased box shadow on hover */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    font-size: 22px;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+}
+
+.card-front {
+    background: linear-gradient(to right, #1abc9c, #3498db);
+}
+
+.card-front img {
+    height: 85px;
+    width: 85px;
+   
+    margin-top: 18px;
+}
+
+.card-back {
+    background: linear-gradient(to right, #1abc9c, #3498db);
+    color: #ffffff;
+    box-shadow: 0 5px 20px #3498db;
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+.card-front-1,
+.card-back-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+}
+
+.card-front-1 {
+    background: linear-gradient(to right, #ffbe0b, #ff0066);
+}
+
+.card-front-1 img {
+    height: 75px;
+    width: 75px;  
+    margin-top: 18px;
+}
+
+.card-back-1 {
+    background: linear-gradient(to right, #ffbe0b, #ff0066);
+    color: #ffffff;
+    box-shadow: 0 5px 20px #d26d33;
+    transform: rotateY(180deg);
+}
+
+
+
+
+.card-back img {
+    height: 75px;
+    width: 75px;  
+    margin-top: 1rem;
+    transform: perspective(3000px) rotateY(5deg);
+}
+
+.card-back h3 {
+    margin-bottom: 0.3rem;
+}
+
+.card-back h1 {
+    margin: 0;
+}
+
+
+.card-back-1 img {
+    width: 140px;
+    margin-top: 1rem;
+    transform: perspective(3000px) rotateY(5deg);
+}
+
+.card-back-1 h3 {
+    margin-bottom: 0.3rem;
+}
+
+.card-back-1 h1 {
+    margin: 0;
+}
+
+
+/* -- YouTube Link Styles -- */
+
+#source-link {
+top: 60px;
+}
+
+#source-link > i {
+color: rgb(94, 106, 210);
+}
+
+#yt-link {  
+top: 10px;
+}
+
+#yt-link > i {
+color: rgb(219, 31, 106); 
+
+}
+
+.meta-link {
+align-items: center;
+backdrop-filter: blur(3px);
+background-color: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 6px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+cursor: pointer;  
+display: inline-flex;
+gap: 5px;
+left: 10px;
+padding: 10px 20px;
+position: fixed;
+text-decoration: none;
+transition: background-color 600ms, border-color 600ms;
+z-index: 10000;
+}
+
+.meta-link:hover {
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+height: 20px;
+line-height: 20px;
+}
+
+.meta-link > span {
+color: white;
+font-family: "Rubik", sans-serif;
+transition: color 600ms;
+}
