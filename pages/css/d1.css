@@ -128,13 +128,13 @@
     transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
     border-radius: 20px;
     border: 5px solid #e6e6e6;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); /* Adjusted box shadow */
-    transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow; /* Added box-shadow transition */
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); 
+    transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow; 
 }
 
 .card:hover {
     transform: translate3d(0px, 0px, -150px);
-    box-shadow: 0 50px 80px -20px rgba(32, 195, 187, 0.5); /* Increased box shadow on hover */
+    box-shadow: 0 50px 80px -20px rgba(32, 195, 187, 0.5); 
 }
 
 .card-inner {
