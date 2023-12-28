@@ -109,6 +109,8 @@ if (!$result2) {
         echo "</div>";
         ?>
 
+        <br><br> <br><br>
+
         <div class="text">
             <a href="editdoctor.html" class="link">edit profile</a>
             <br><br>
