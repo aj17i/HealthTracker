@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['logged'] = true;
         $_SESSION['email'] = $email;
         header("Location: patient.php");
-        exit(); 
-        
+        exit();
+
     } else {
         header("Location: patientLogin.html");
         exit();

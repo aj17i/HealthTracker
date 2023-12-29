@@ -26,7 +26,7 @@ $user = $_SESSION['email'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  
+
     $Pid = isset($_POST['Pid']) ? $_POST['Pid'] : '';
     $history = isset($_POST['history']) ? $_POST['history'] : '';
     $medicine = isset($_POST['medicine']) ? $_POST['medicine'] : '';
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE patient SET ";
     $updateFields = [];
 
-   
+
     if (!empty($history)) {
         $updateFields[] = "history='$history'";
     }
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mysqli_query($con, $sql);
 
- 
+
     if (mysqli_error($con)) {
         die('Error in the query: ' . mysqli_error($con));
     }

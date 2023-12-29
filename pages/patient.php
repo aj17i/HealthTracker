@@ -68,7 +68,6 @@ if (!$result) {
             <form action="logout.php">
                 <button class="btn"> Logout</button>
             </form>
-
         </div>
     </div>
 </body>

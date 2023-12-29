@@ -5,7 +5,7 @@ if (
     && isset($_POST['email']) && $_POST['email'] != ""
 ) {
     $fullname = $_POST['fullname'];
-   
+
     $pass = $_POST['password'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
