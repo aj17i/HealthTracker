@@ -1,0 +1,114 @@
+.container {
+    background-color: rgb(224, 229, 232);
+    border-radius: 30px;
+    margin-top: 20px;
+    width: 1200px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    display: block;
+    position: relative;
+}
+
+.container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+}
+
+.container .text {
+    margin-top: -20px;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.container .text .bold {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.container  .detailes {
+    background-image: url('./images/4.webp');
+    box-shadow: 10px 7px 10px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 800px;
+    margin-left: 170px;
+    color: rgb(224, 229, 232);
+    padding: 20px;
+    position: relative;
+}
+
+.container .text h1 {
+    font-size: 40px;
+    font-style: italic;
+    box-shadow: 10px 7px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 500px;
+    margin-left: 330px;
+}
+
+.container .text h2 {
+    font-style: italic;
+    box-shadow: 10px 7px 10px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 500px;
+    margin-left: 330px;
+    margin-top: 30px;
+}
+
+.container .text h3 {
+    font-style: italic;
+}
+
+.container .circle-image {
+    position:absolute;
+    float: right;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 40px;
+    margin-top: -800px;
+    margin-left: 850px;
+    margin-right: 50px;
+    box-shadow: 10px 7px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid navy;
+
+}
+
+.container .link {
+    background-color: white;
+    color: #180f50;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.container .link:hover {
+    background-color: #180f50;
+    color: white;
+}
+
+.container .btn {
+    background-color: white;
+    color: #180f50;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Noto Serif', serif;
+}
+
+.container .btn:hover {
+    background-color: #180f50;
+    color: white;
+}

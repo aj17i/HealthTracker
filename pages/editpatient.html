@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/edit.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Edit Profile</div>
+        <div class="content">
+            <form action="editpatient.php" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your full name"  id="Fullname" name="Fullname">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" placeholder="Enter your number"  id="phone" name="phone">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Birth Date</span>
+                        <input type="date"  id="birthd" name="birthd">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" placeholder="Enter your address"  id="address" name="address">
+                    </div>
+
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="male" value="male">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="male">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="female">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Save Changes">
+                </div>
+            </form>
+            <a class="link" href="patient.php">Go Back</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
