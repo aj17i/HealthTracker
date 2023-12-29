@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/edit.css">
+
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var Pid = urlParams.get('Pid');
+
+      
+        document.getElementById('PidInput').value = Pid;
+    });
+</script>
+
+<body>
+    <div class="container">
+        <div class="title">Edit Patient Information</div>
+        <div class="content">
+            <form action="editPatientInfo.php" method="post">
+                <input type="hidden" id="PidInput" name="Pid" value="">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">History</span>
+                        <input type="text" placeholder="History"  id="history" name="history">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Medicine</span>
+                        <input type="text" placeholder="Medicine"  id="medicine" name="medicine">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Allergies</span>
+                        <input type="text" placeholder="Allergies"  id="allergies" name="allergies">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Weight</span>
+                        <input type="text" placeholder="Weight"  id="weight" name="weight">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Supervising Physician</span>
+                        <input type="text" placeholder="Docotor ID"  id="Did" name="Did">
+                    </div>
+
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Save Changes">
+                </div>
+            </form>
+            <a class="link" href="doctor.php">Go Back</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

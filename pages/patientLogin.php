@@ -3,11 +3,10 @@ require_once 'Login.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve values from the form
+
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $pass = mysqli_real_escape_string($con, $_POST['password']);
 
-    // Query to check if the user exists
     $query = "SELECT * FROM patient WHERE email='$email' AND password='$pass'";
     $result = mysqli_query($con, $query);
 
@@ -29,6 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Close the database connection
+
 mysqli_close($con);
 ?>

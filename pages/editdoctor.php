@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = isset($_POST['address']) ? $_POST['address'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
 
-    // Construct the SQL query based on the filled fields
+
     $sql = "UPDATE doctor SET ";
     $updateFields = [];
 
@@ -67,16 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateFields[] = "gender='$gender'";
     }
 
-    // Combine all update fields into the query
+   
     $sql .= implode(", ", $updateFields);
 
-    // Add a condition based on some unique identifier (e.g., user ID or email)
+
     $sql .= " where email = '$user';";
 
-    // Execute the query
+
     mysqli_query($con, $sql);
 
-    // Check for errors
     if (mysqli_error($con)) {
         die('Error in the query: ' . mysqli_error($con));
     }

@@ -27,7 +27,7 @@
     font-weight: bolder;
 }
 
-.container .text .detailes {
+.container  .detailes {
     background-image: url('./images/4.webp');
     box-shadow: 10px 7px 10px 7px rgba(0, 0, 0, 0.5);
     border-radius: 30px;

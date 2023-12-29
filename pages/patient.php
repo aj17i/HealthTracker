@@ -18,9 +18,6 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 $email = $_SESSION['email'];
 
 
-
-
-// Fetch all doctors' information
 $query = "SELECT * FROM patient WHERE email='$email'";
 $result = mysqli_query($con, $query);
 

@@ -19,12 +19,8 @@ $email = $_SESSION['email'];
 $Pid = $_GET['Pid'];
 
 
-
-
-// Fetch all doctors' information
 $query = "SELECT * FROM patient WHERE Pid='$Pid'";
 $result = mysqli_query($con, $query);
-
 
 
 if (!$result) {
@@ -52,10 +48,10 @@ if (!$result) {
                 echo "<div>";
                 echo "<h2>Patient: " . $row['Fullname'] . "</h2>";
                 echo "<div class = ''>";
+                echo "<p><span class = 'bold'>Pid: </span> <span class = 'display-box'>" . $row['Pid'] . "</span> </p>";
                 echo "<p><span class = 'bold'>Birth Date: </span> <span class = 'display-box'>" . $row['birthd'] . " </span></p>";
                 echo "<p><span class = 'bold'>Gender: </span> <span class = 'display-box'>" . $row['gender'] . "</span> </p>";
                 echo "<p><span class = 'bold'>Address: </span> <span class = 'display-box'>" . $row['address'] . "</span> </p>";
-                echo "<p><span class = 'bold'>Pid: </span> <span class = 'display-box'>" . $row['Pid'] . "</span> </p>";
                 echo "<p><span class = 'bold'>Email: </span> <span class = 'display-box'>" . $row['email'] . "</span> </p>";
                 echo "<p><span class = 'bold'>History: </span> <span class = 'display-box'>" . $row['history'] . "</span> </p>";
                 echo "<p><span class = 'bold'>Allergies: </span> <span class = 'display-box'>" . $row['allergies'] . "</span> </p>";
@@ -68,7 +64,8 @@ if (!$result) {
             }
             ?>
             <br><br>
-            <a class="link" href="doctor.php">Back</a>
+            <a class="link" href="editPtientInfo.html?Pid=<?php echo $Pid; ?>">Edit Patient Info</a>
+            <a class="link" href="doctor.php">Go Back</a>
         </div>
     </div>
 </body>
